@@ -1,7 +1,15 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon align-items-center">
   <%= link_to "#", class: "navbar-brand" do %>
     <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+  <% end %>
+
+  <div class="mr-auto">
+    <%= simple_form_for :search, method: :get, url: spaces_path, html: { class: 'active-pink-3 active-pink-4 mb-0 form-inline' } do |f| %>
+      <%= f.input :value,  value: {value: "Search for spaces"}, label: false, class: " container-fluid" %>
+      <%= f.submit :search,  class: "btn btn-outline-primary mb-0" %>
     <% end %>
+  </div>
+
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
