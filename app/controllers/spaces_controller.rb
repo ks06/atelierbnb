@@ -3,7 +3,11 @@ class SpacesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @spaces = Space.all
+    if params[:search]
+      @spaces = Space.where("category ILIKE ?", "%" + params[:search][:value] + "%")
+    else
+      @spaces = Space.all
+    end
   end
 
   def show
@@ -47,5 +51,9 @@ class SpacesController < ApplicationController
 
   def space_params
     params.require(:space).permit(:location, :category, :capacity, :description, :user_id, :title)
+  end
+
+  def search_params
+    params.require(:search).permit(:search)
   end
 end

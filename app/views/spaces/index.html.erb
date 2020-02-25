@@ -1,9 +1,13 @@
 <h1>Spaces</h1>
 
-<ul>
-  <% @spaces.each do |space| %>
-    <li><%= link_to space.title, space_path(space) %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="row">
+      <% @spaces.each do |space| %>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <%= link_to (render partial: 'shared/index_card', locals: { space: space }), space_path(space) %>
+        </div>
+    <% end %>
+  </div>
+</div>
 <!-- create new cocktail -->
 <%= link_to "Create a new space", new_space_path %>
