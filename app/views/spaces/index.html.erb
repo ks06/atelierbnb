@@ -1,0 +1,9 @@
+<h1>Spaces</h1>
+
+<ul>
+  <% @spaces.each do |space| %>
+    <li><%= link_to space.title, space_path(space) %></li>
+  <% end %>
+</ul>
+<!-- create new cocktail -->
+<%= link_to "Create a new space", new_space_path %>

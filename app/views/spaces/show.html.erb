@@ -1,0 +1,11 @@
+<h2><%= @space.title %></h2>
+
+<h1>Create a new booking</h1>
+<%= simple_form_for [@space, @booking], method: :get, url: confirmation_space_booking_path([@space, @booking]) do |f| %>
+<%= f.input :time %>
+<%= f.input :date %>
+<%= f.submit :submit %>
+<% end %>
+<br>
+
+<%= link_to "Back", spaces_path %> | <%= link_to "Delete", space_path(@space), data: { confirm: 'Are you sure?' }, method: :delete %> | <%= link_to "Edit", edit_space_path(@space) %>

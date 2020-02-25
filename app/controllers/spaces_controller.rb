@@ -1,10 +1,14 @@
 class SpacesController < ApplicationController
+  before_action :set_space, except: [:index, :new, :create]
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @spaces = Space.all
   end
 
   def show
-    @space = Space.find(params[:id])
+    @booking = Booking.new
+    @booking.space = @space
   end
 
   def new
@@ -23,22 +27,25 @@ class SpacesController < ApplicationController
   end
 
   def edit
-    @space = Space.find(params[:id])
   end
 
   def update
-    @space = Space.find(params[:id])
     @space.update(space_params)
+    redirect_to @space
   end
 
   def destroy
-    @space = Space.find(params[:id])
     @space.destroy
+    redirect_to spaces_path
   end
 
   private
 
+  def set_space
+    @space = Space.find(params[:id])
+  end
+
   def space_params
-    params.require(:space).permit(:location, :type, :capacity, :description, :user_id)
+    params.require(:space).permit(:location, :category, :capacity, :description, :user_id, :title)
   end
 end

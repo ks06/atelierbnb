@@ -1,0 +1,8 @@
+<h2>Confirm your booking details</h2>
+
+<%= simple_form_for [@space, @booking] do |f| %>
+<%= f.input :time %>
+<%= f.input :date %>
+<%= f.submit :submit %>
+<% end %>
+<br>

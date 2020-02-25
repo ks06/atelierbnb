@@ -1,8 +1,9 @@
 class Space < ApplicationRecord
-  belongs_to :owner, source: :user
+  belongs_to :owner, class_name: "User", foreign_key: 'user_id'
   has_many :bookings
   has_many :users, through: :bookings
 
   validates :location, presence: true
-  validates :type, presence: true, acceptance: { accept: %w[music_recording_studio music_rehearsal_room dance_studio general_rehearsal_space artist_studio] }
+  validates :category, presence: true, inclusion: { in: ["Music recording studio", "Music rehearsal room", "Dance studio", "General rehearsal space", "Artist studio"] }
+  validates :title, presence: true
 end
