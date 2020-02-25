@@ -3,9 +3,9 @@
     <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
   <% end %>
 
-  <div class="mr-auto">
+  <div class="mr-auto w-50">
     <%= simple_form_for :search, method: :get, url: spaces_path, html: { class: 'active-pink-3 active-pink-4 mb-0 form-inline' } do |f| %>
-      <%= f.input :value,  value: {value: "Search for spaces"}, label: false, class: " container-fluid" %>
+      <%= f.input :text,  value: {value: "Search for spaces"}, placeholder: 'Search for spaces', label: false%>
       <%= f.submit :search,  class: "btn btn-outline-primary mb-0" %>
     <% end %>
   </div>
@@ -18,12 +18,15 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Home", spaces_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to "Create new listing", new_space_path, class: "nav-link" %>
+      </li>
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
-        </li>
         <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
+          <%= link_to "Messages", spaces_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

@@ -4,7 +4,7 @@ class SpacesController < ApplicationController
 
   def index
     if params[:search]
-      @spaces = Space.where("category ILIKE ?", "%" + params[:search][:value] + "%")
+      @spaces = Space.where("category ILIKE ?", "%" + params[:search][:text] + "%")
     else
       @spaces = Space.all
     end
