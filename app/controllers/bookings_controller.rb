@@ -1,5 +1,10 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, except: [:create, :confirmation]
+  before_action :set_booking, except: [:create, :confirmation, :index]
+
+  def index
+    @user = current_user
+    @bookings = Booking.where(['user_id = ?', "#{@user.id}"])
+  end
 
   def show
     @booking = Booking.find(params[:id])
