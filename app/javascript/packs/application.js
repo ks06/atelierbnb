@@ -23,3 +23,7 @@ require("channels")
 // ----------------------------------------------------
 
 import "bootstrap";
+
+// import { initChangeLandingNavbar } from "../components/navbar.js"
+
+// initChangeLandingNavbar()
