@@ -1,0 +1,14 @@
+<div class="card" style="width: 18rem;">
+  <%= image_tag 'space_image_show_2.png', class: "card-img-top", alt: "recording studio" %>
+  <div class="card-body">
+    <h5 class="card-title"><strong><%= booking.space.title %></strong></h5>
+    <p class="card-text">
+      <strong>Category:</strong> <%= booking.space.category %><br><br>
+      <strong>Location:</strong> <%= booking.space.location %> <br><br>
+      <strong>Capacity:</strong> <%= booking.space.capacity %> <br><br>
+      <strong>Description:</strong> <%= booking.space.description %> <br><br>
+      <strong>Date:</strong> <%= booking.date %> <br><br>
+      <strong>Time:</strong> <%= booking.time.strftime("%I:%M %p") %><br><br>
+    </p>
+  </div>
+</div>
