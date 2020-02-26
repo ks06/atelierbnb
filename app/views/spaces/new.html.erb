@@ -1,11 +1,14 @@
 <h1>Create a new space</h1>
+
 <%= simple_form_for @space do |f| %>
-<%= f.input :category, collection: ["Music recording studio", "Music rehearsal room", "Dance studio", "General rehearsal space", "Artist studio"] %>
-<%= f.input :title %>
-<%= f.input :location %>
-<%= f.input :capacity %>
-<%= f.input :description %>
-<%= f.submit :submit %>
+  <%= f.input :category, collection: ["Music recording studio", "Music rehearsal room", "Dance studio", "General rehearsal space", "Artist studio"] %>
+  <%= f.input :title %>
+  <%= f.input :location %>
+  <%= f.input :capacity %>
+  <%= f.input :description %>
+  <%= f.submit :submit %>
 <% end %>
+
 <br>
+
 <%= link_to "Cancel", spaces_path %>

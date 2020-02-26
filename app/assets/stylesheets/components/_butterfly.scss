@@ -1,0 +1,87 @@
+.container {
+    position: absolute;
+    top: 70px;
+}
+.wing {
+    position: absolute;
+
+    transform-style: preserve-3d;
+    animation: flap 0.3s linear infinite alternate;
+    width: 100px;
+    height: 100px;
+    /*background-color: rgba(252, 227, 100, 0.69);*/
+    background: radial-gradient(ellipse at center, rgba(252,227,100,0.9) 65%,rgba(255,0,0,0.9) 100%);
+    border-bottom: 3px solid red;
+}
+.wing:after {
+    content: ' ';
+    position: absolute;
+    width: 74px;
+    height: 88px;
+    top: -76px;
+    left: 25px;
+    /*background-color: rgba(252, 227, 100, 0.69);*/
+    background: radial-gradient(ellipse at center, rgba(228, 203, 125, 0.9) 24%,rgba(248, 237, 110, 0.9) 27%,rgba(252,227,100,0.9) 64%,rgba(255, 0, 0, 0.9) 100%);
+    border-radius: 50% 114%;
+}
+.left {
+    transform-origin: right center;
+    border-radius: 177% 50%;
+}
+.right {
+    transform-origin: left center;
+    border-radius: 50% 177%;
+    left: 110px;
+    animation-direction: alternate-reverse;
+}
+
+.left:after {
+    left: 25px;
+    border-radius: 50% 114%;
+}
+
+.right:after {
+    left: 0;
+    border-radius: 114% 50%;
+}
+
+.body {
+    width: 10px;
+    height: 80px;
+    border-radius: 5px;
+    background-color: #333;
+    position: absolute;
+    left: 100px;
+    top: -30px;
+}
+
+.head {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #333;
+    left: 95px;
+    top: 32px;
+}
+.head:before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 1px;
+    height: 40px;
+    background-color: #333;
+    transform: rotateX(34deg) rotateZ(20deg) translateY(20px);
+    top: -7px;
+}
+.head:after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 1px;
+    height: 40px;
+    background-color: #333;
+    transform: rotateX(34deg) rotateZ(-20deg) translateY(20px);
+    top: -7px;
+    left: 15px;
+}
