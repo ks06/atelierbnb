@@ -3,7 +3,6 @@ class SpacesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    # @spaces = policy_scope(Space)
     if params[:search]
       @spaces = Space.where("category ILIKE ?", "%" + params[:search][:text] + "%")
     else
@@ -18,7 +17,6 @@ class SpacesController < ApplicationController
 
   def new
     @space = Space.new
-    # authorize @space
   end
 
   def create
@@ -26,7 +24,6 @@ class SpacesController < ApplicationController
 
     @space = Space.new(space_params)
     @space.owner = current_user
-    # authorize @space
     if @space.save
       redirect_to space_path(@space)
     else
@@ -35,7 +32,6 @@ class SpacesController < ApplicationController
   end
 
   def edit
-    # @space = Space.find(params[:id])
   end
 
   def update
@@ -52,7 +48,6 @@ class SpacesController < ApplicationController
 
   def set_space
     @space = Space.find(params[:id])
-    # authorize @space
   end
 
   def space_params
