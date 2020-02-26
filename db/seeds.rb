@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+puts "Creating seed"
+
+30.times { Space.create!(
+  location: Faker::Address.full_address,
+  capacity: (1..9).to_a.sample,
+  description: Faker::Lorem.paragraph(sentence_count: 3),
+  category: ["Music recording studio", "Music rehearsal room", "Dance studio", "General rehearsal space", "Artist studio"].sample,
+  user_id: 1,
+  title: Faker::Artist.name
+  )
+}
+
+puts "Seed done"
