@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     @space = Space.find(params[:space_id])
     @booking.space = @space
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to user_bookings_path(@booking.user)
     else
       render :confirmation
     end
