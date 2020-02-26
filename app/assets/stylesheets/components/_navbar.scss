@@ -3,6 +3,14 @@
   background: white;
 }
 
+// .navbar-search-hide {
+//   display: none;
+// }
+
+.navbar-lewagon-transparent {
+  background: transparent;
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -13,4 +21,8 @@
 
 .simple_form input[type='text'] {
   width: 30vw;
+}
+
+.search-size {
+  height: 100px;
 }

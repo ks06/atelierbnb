@@ -1,1 +1,17 @@
 // Specific CSS for your home-page
+
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+.image-holder {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  background-image: url("art-studio.jpg");
+  background-position: center;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+}

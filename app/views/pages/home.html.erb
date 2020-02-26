@@ -1,2 +1,16 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!-- <h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p> -->
+
+<div class="image-holder">
+  <%= render 'shared/navbar_landing' %>
+
+<div class="d-flex justify-content-around align-items-center" style="height: 300px;">
+  <div>
+      <%= simple_form_for :search, method: :get, url: spaces_path, html: { class: 'active-pink-3 active-pink-4 mb-0 form-inline' } do |f| %>
+        <%= f.input :text,  value: {value: "Search for spaces"}, placeholder: 'Search for spaces', label: false, class: "search-size"%>
+        <%= f.submit :search,  class: "btn-lg btn-outline-primary mb-0" %>
+      <% end %>
+  </div>
+</div>
+
+</div>
