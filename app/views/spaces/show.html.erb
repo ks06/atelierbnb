@@ -23,11 +23,22 @@
 <div class="container">
   <div class="row justify-content-between">
     <div class="col-xs-12 col-md-8 col-lg-8">
-      <h3><%= @space.title %></h3>
-      <p><strong>Location:</strong> <%= @space.location %></p>
-      <p><strong>capacity:</strong> <%= @space.capacity %></p>
-      <p><strong>Description:</strong> <%= @space.description %></p>
+      <div>
+        <h3><%= @space.title %></h3>
+        <p><strong>Location:</strong> <%= @space.location %></p>
+        <p><strong>capacity:</strong> <%= @space.capacity %></p>
+        <p><strong>Description:</strong> <%= @space.description %></p>
+      </div>
+
+      <div id= "map"
+           style="width: 100%;
+           height: 300px;"
+           data-markers="<%= @marker.to_json %>"
+           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+
     </div>
+
 
     <div class="col-xs-12 col-md-4 col-lg-4">
       <h3>Book <%= @space.title %></h3>
