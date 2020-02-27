@@ -1,15 +1,25 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <%= image_tag 'space_image_show_3.png', class: "d-block w-100", alt: "recording studio" %>
-    </div>
-    <div class="carousel-item">
-      <%= image_tag 'space_image_show_2.png', class: "d-block w-100", alt: "recording studio" %>
-    </div>
-    <div class="carousel-item">
-      <%= image_tag 'space_image_show_1.png', class: "d-block w-100", alt: "recording studio" %>
-    </div>
+    <% if @space.photos.length == 0 %>
+      <div class="carousel-item active">
+        <%= image_tag 'placeholder.jpg', class: "d-block w-100", alt: "recording studio" %>
+      </div>
+    <% else %>
+      <% @space.photos.each_with_index do |photo, index| %>
+        <% if index == 0 %>
+          <div class="carousel-item active">
+            <%= cl_image_tag photo.key, class: "d-block w-100", crop: :fill %>
+          </div>
+        <% else %>
+          <div class="carousel-item">
+            <%= cl_image_tag photo.key, class: "d-block w-100", crop: :fill %>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
   </div>
+
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
@@ -19,6 +29,10 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+<% if current_user == @space.owner %>
+  <%= link_to "Delete", space_path(@space), data: { confirm: 'Are you sure?' }, method: :delete %> | <%= link_to "Edit", edit_space_path(@space) %>
+<% end %>
 
 <div class="container">
   <div class="row justify-content-between">
@@ -39,5 +53,5 @@
     </div>
   </div>
 </div>
-
-  <%= link_to "Delete", space_path(@space), data: { confirm: 'Are you sure?' }, method: :delete %> | <%= link_to "Edit", edit_space_path(@space) %>
+<br>
+<br>

@@ -1,7 +1,14 @@
 <div class="index-card">
   <div class="card">
+
     <div class="card-img-top">
+      <% if space.photos.length == 0 %>
+        <%= image_tag 'placeholder.jpg', class: "index-card-image", alt: "recording studio" %>
+    <% else %>
+      <%= cl_image_tag space.photos.first.key, class: "index-card-image", crop: :fill %>
+    <% end %>
     </div>
+
     <div class="card-body">
       <h3 class="card-title"><%= space.title %></h3>
       <p class="card-text"><%= space.category %></p>
