@@ -51,7 +51,7 @@ class SpacesController < ApplicationController
   end
 
   def space_params
-    params.require(:space).permit(:location, :category, :capacity, :description, :user_id, :title)
+    params.require(:space).permit(:location, :category, :capacity, :description, :user_id, :title, photos: [])
   end
 
   def search_params
