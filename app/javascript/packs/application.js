@@ -27,3 +27,9 @@ import "bootstrap";
 // import { initChangeLandingNavbar } from "../components/navbar.js"
 
 // initChangeLandingNavbar()
+
+import { initMapbox } from '../plugins/init_mapbox';
+
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})

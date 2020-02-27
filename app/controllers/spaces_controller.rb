@@ -13,6 +13,7 @@ class SpacesController < ApplicationController
   def show
     @booking = Booking.new
     @booking.space = @space
+    @marker = [{ lat: @space.latitude, lng: @space.longitude }]
   end
 
   def new
