@@ -3,10 +3,16 @@ class Space < ApplicationRecord
   has_many :bookings
   has_many :users, through: :bookings
 
+  has_many_attached :photos
+
   validates :location, presence: true
   validates :category, presence: true, inclusion: { in: ["Music recording studio", "Music rehearsal room", "Dance studio", "General rehearsal space", "Artist studio"] }
   validates :title, presence: true
 
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
+
+  validates :photos, presence: true
+
 end
+
