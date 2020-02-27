@@ -57,7 +57,7 @@
     <div class="col-xs-12 col-md-4 col-lg-4">
       <h3>Book <%= @space.title %></h3>
       <%= simple_form_for [@space, @booking], method: :get, url: confirmation_space_booking_path([@space, @booking]) do |f| %>
-      <%= f.input :date %>
+      <%= f.input :date, type: :date, html5: true %>
       <%= f.input :time %>
       <%= f.submit :Book, class: "btn btn-primary" %>
       <% end %>
@@ -66,3 +66,4 @@
 </div>
 <br>
 <br>
+
