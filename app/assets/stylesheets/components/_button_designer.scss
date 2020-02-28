@@ -23,3 +23,15 @@
 .cancel-button a {
 color: $danger;
 }
+
+.book-button {
+  background: $gainsboro;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+
+  &:hover {
+    background: $smoke;
+    transition: 0.3s;
+  }
+}
