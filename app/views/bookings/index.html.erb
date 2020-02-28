@@ -1,11 +1,12 @@
-<h2 class="text-center">My bookings</h2>
-
 <div class="container">
-  <div class="row justify-content-around">
+<h2>My bookings</h2>
+  <div class="row">
       <% @bookings.each do |booking| %>
-        <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="col-sm-12 col-md-12 col-lg-12">
           <%= (render partial: 'shared/booking_card', locals: { booking: booking }) %>
         </div>
       <% end %>
   </div>
 </div>
+
+
