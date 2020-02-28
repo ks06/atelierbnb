@@ -14,5 +14,12 @@ class Space < ApplicationRecord
 
   validates :photos, presence: true
 
+  include PgSearch::Model
+  pg_search_scope :search_errthang,
+    against: [ :location, :category, :description, :title ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
 end
 

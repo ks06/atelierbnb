@@ -7,4 +7,5 @@ class ApplicationController < ActionController::Base
     @show_navbar = true
   end
 
+
 end

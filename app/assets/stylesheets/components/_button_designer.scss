@@ -1,0 +1,25 @@
+.upload-photo {
+  border: 1px solid $warning;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-weight: 500;
+  background: transparent;
+  border-radius: 2px;
+  font-family: 'Spartan';
+  color: $warning;
+  transition: 0.2s;
+}
+
+.upload-photo:hover {
+  background: $warning;
+  color: #202429;
+}
+
+.cancel-button {
+  position: relative;
+  top: -72px;
+}
+
+.cancel-button a {
+color: $danger;
+}
