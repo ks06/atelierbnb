@@ -14,3 +14,16 @@ body {
   margin: 0px;
   padding: 0px;
 }
+
+.home_video {
+ width: 100vw;
+ height: 100vh;
+ position: absolute;
+ object-fit: cover;
+ top: 0;
+ z-index: -2;
+ // opacity: 0.6;
+ // background: linear-gradient(0, 0, 0, 15);
+}
+
+

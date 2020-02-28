@@ -1,16 +1,13 @@
-<!-- <h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p> -->
 
-<div class="image-holder" style="background-image: url(<%= image_path "art-studio.jpg" %>);">
+  <%= video_tag "video3.mp4", autoplay: true, loop: true, muted: true, class: "home_video" %>
   <%= render 'shared/navbar_landing' %>
 
-<div class="d-flex justify-content-around align-items-center" style="height: 300px;">
-  <div>
+  <div class="d-flex justify-content-around align-items-center" style="height: 300px;">
+    <div>
       <%= simple_form_for :search, method: :get, url: spaces_path, html: { class: 'active-pink-3 active-pink-4 mb-0 form-inline' } do |f| %>
         <%= f.input :text,  value: {value: "Search for spaces"}, placeholder: 'Search for spaces', label: false, class: "search-size"%>
         <%= f.submit :search,  class: "btn-lg btn-outline-primary mb-0" %>
       <% end %>
+    </div>
   </div>
-</div>
 
-</div>
