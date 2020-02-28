@@ -1,15 +1,31 @@
-<h1>Create a new space</h1>
 
-<%= simple_form_for @space do |f| %>
-  <%= f.input :category, collection: ["Music recording studio", "Music rehearsal room", "Dance studio", "General rehearsal space", "Artist studio"] %>
-  <%= f.input :title %>
-  <%= f.input :location %>
-  <%= f.input :capacity %>
-  <%= f.input :description %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit :submit %>
-<% end %>
+<div class="container mt-3 align-center w-50">
+  <div class="row">
+    <div class="col-12">
+      <h2>Create a new space</h2>
+      <br>
+    </div>
 
-<br>
+    <div class="col-12">
+      <div style="border-bottom: 1px solid darkgrey;">
+        <%= simple_form_for @space do |f| %>
+          <%= f.input :category, collection: ["Music recording studio", "Music rehearsal room", "Dance studio", "General rehearsal space", "Artist studio"] %>
+          <%= f.input :title %>
+          <%= f.input :location %>
+          <%= f.input :capacity %>
+          <%= f.input :description %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true, class: 'd-none' }, label_html: { class: 'upload-photo'}, label: '📷 Upload photos' %>
+          <%= f.submit :submit, class: "btn btn-lg btn-outline-success float-right mt-3" %>
+        <% end %>
+      </div>
+    </div>
 
-<%= link_to "Cancel", spaces_path %>
+
+    <div class="col-12">
+      <br>
+      <%= link_to "Cancel", spaces_path, class: "btn btn-lg btn-outline-danger cancel-button"%>
+      <br>
+      <br>
+    </div>
+  </div>
+</div>
