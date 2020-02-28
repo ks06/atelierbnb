@@ -1,14 +1,31 @@
-<div class="card" style="width: 18rem;">
-  <%= image_tag 'space_image_show_2.png', class: "card-img-top", alt: "recording studio" %>
-  <div class="card-body">
-    <h5 class="card-title"><strong><%= booking.space.title %></strong></h5>
-    <p class="card-text">
-      <strong>Category:</strong> <%= booking.space.category %><br><br>
-      <strong>Location:</strong> <%= booking.space.location %> <br><br>
-      <strong>Capacity:</strong> <%= booking.space.capacity %> <br><br>
-      <strong>Description:</strong> <%= booking.space.description %> <br><br>
-      <strong>Date:</strong> <%= booking.date %> <br><br>
-      <strong>Time:</strong> <%= booking.time.strftime("%I:%M %p") %><br><br>
+<div class="card-product">
+  <%= image_tag 'space_image_show_2.png', alt: "recording studio" %>
+  <div class="card-product-infos">
+    <div class="first-line">
+      <p class="booking-category">
+        <%= booking.space.category %><br>
+      </p>
+      <p class="date">
+        <strong><%= booking.date.strftime("%d-%b-%Y") %> <br></strong>
+      </p>
+    </div>
+
+    <div class="second-line">
+      <p class="space-title">
+      <strong><%= booking.space.title %></strong><br>
+      </p>
+      <p class="time">
+        <strong><%= booking.time.strftime("%I:%M %p") %><br></strong>
+      </p>
+    </div>
+
+    <p class="space-info">
+      <%= booking.space.location %> <br>
+      <%= "#{booking.space.capacity} people" %> <br>
+      <%= booking.space.description.truncate(210) %> <br>
     </p>
   </div>
+
 </div>
+
+
