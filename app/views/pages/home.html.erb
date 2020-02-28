@@ -1,13 +1,26 @@
 
-  <%= video_tag "video2.mp4", autoplay: true, loop: true, muted: true, class: "home_video" %>
-  <%= render 'shared/navbar_landing' %>
+<%= video_tag "video3.mp4", autoplay: true, loop: true, muted: true, class: "home_video" %>
 
-  <div class="d-flex justify-content-around align-items-center" style="height: 300px;">
-    <div>
-      <%= simple_form_for :search, method: :get, url: spaces_path, html: { class: 'active-pink-3 active-pink-4 mb-0 form-inline' } do |f| %>
-        <%= f.input :text,  value: {value: "Search for spaces"}, placeholder: 'Search for spaces', label: false, class: "search-size"%>
-        <%= f.submit :search,  class: "btn-lg btn-outline-primary mb-0" %>
-      <% end %>
+<div style="height:100vh; width: 100vw; background-color: #e9bcb7; background-image: linear-gradient(315deg, #e9bcb7 0%, #29524a 74%); opacity: 50%; z-index: -1; position: absolute; top:0px">
+</div>
+
+
+
+<div>
+  <div>
+    <%= render 'shared/navbar_landing' %>
+  </div>
+
+  <div class="d-flex justify-content-left align-items-center" style="height: 450px; padding-left: 100px;">
+    <div class="large-width ml-2">
+
+        <form action="/spaces" method="get" class="text-white d-flex justify-content-center active-purple-2 mt-2 ">
+          <input class=" text-white form-control form-control-sm w-90 search-bar search-bar-landing trans-bg" style=" color: white; border:0px; border-bottom: 1px solid #CCC9A1; border-radius: 0px; font-size:25px;" type="text" placeholder="Search for studio spaces" name="search" aria-label="Search">
+          <button type="submit" class="trans-bg border-0"><i class="fas fa-search fa-2x" aria-hidden="true"></i></button>
+        </form>
+
     </div>
   </div>
 
+
+</div>

@@ -1,13 +1,16 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon align-items-center">
+<div class="navbar navbar-expand-xl navbar-light navbar-lewagon align-items-center">
   <%= link_to "/", class: "navbar-brand" do %>
     <h1 id="sitename">Atelierbnb</h1>
   <% end %>
 
-  <div class="mr-auto w-50" id="navbar-search">
-    <%= simple_form_for :search, method: :get, url: spaces_path, html: { class: 'active-pink-3 active-pink-4 mb-0 form-inline' } do |f| %>
-      <%= f.input :text,  value: {value: "Search for spaces"}, placeholder: 'Search for spaces', label: false%>
-      <%= f.submit :search,  class: "btn btn-outline-primary mb-0" %>
-    <% end %>
+  <div class="mr-auto medium-width" id="navbar-search">
+
+    <form action="/spaces" method="get" class="form-inline d-flex justify-content-center md-form form-sm active-purple-2 mt-2">
+      <input class="form-control form-control-sm mr-3 w-75 search-bar" style="border:0px; border-bottom: 1px solid #CCC9A1; border-radius: 0px;" type="text" placeholder="Search" name="search" aria-label="Search">
+      <button type="submit" class="border-0"><i class="fas fa-search" aria-hidden="true"></i></button>
+    </form>
+
+
   </div>
 
 
@@ -22,9 +25,9 @@
         <%= link_to "Home", spaces_path, class: "nav-link" %>
       </li>
 
-        <li class="nav-item active">
-          <%= link_to "Create new listing", new_space_path, class: "nav-link" %>
-        </li>
+      <li class="nav-item active">
+        <%= link_to "Create new listing", new_space_path, class: "nav-link" %>
+      </li>
 
 
       <% if user_signed_in? %>

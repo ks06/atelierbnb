@@ -4,11 +4,11 @@
 }
 
 #sitename {
-  font-family: 'Simonetta', ;
+  font-family: 'Spartan', ;
 }
 
 #sitename-landing{
-  font-family: 'Simonetta', ;
+  font-family: 'Spartan', ;
   color: white;
 }
 
@@ -39,3 +39,42 @@
 .navbar-landing a {
     color: white;
 }
+
+.search-bar{
+  transition: 0.3s;
+  &:focus {
+    box-shadow: 0px 9px 8px -8px #CCC9A1;
+    background: transparent
+  }
+}
+
+.medium-width {
+  width: 510px;
+}
+
+
+// .active-purple-2 input.form-control[type=text]:focus:not([readonly]) {
+//   box-shadow: 0 3px #ce93d8;
+// }
+
+.active-purple-2 .fas {
+  color: #CCC9A1;
+}
+.trans-bg {
+  background: transparent
+}
+
+.large-width {
+  width: 500px;
+}
+
+.search-bar-landing::placeholder {
+  color: rgb(200,200,200);
+}
+
+
+// .active-purple-2 input[type=text]:focus:not([readonly]) {
+//   border-bottom: 1px solid #ce93d8;
+//   box-shadow: 0 1px 0 0 #ce93d8;
+// }
+

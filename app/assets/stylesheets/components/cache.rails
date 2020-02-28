@@ -1,0 +1,11 @@
+  <form class="form-inline d-flex justify-content-center md-form form-sm active-purple-2 mt-2">
+      <input class="form-control form-control-sm mr-3 w-75" style="border:0px;" type="text" placeholder="Search" aria-label="Search">
+      <input type="submit" value="">
+      <i class="fas fa-search" aria-hidden="true"></i>
+    </form>
+
+
+    <%= simple_form_for :search, method: :get, url: spaces_path, html: { class: 'active-pink-3 active-pink-4 mb-0 form-inline' } do |f| %>
+      <%= f.input :text,  value: {value: "Search for spaces"}, placeholder: 'Search for spaces', label: false%>
+      <%= f.submit :search,  class: 'd-none fa fas-search', label: '📷 Upload photos' %>
+    <% end %>
